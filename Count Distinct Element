@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i = 0;i<n;i++){
+        cin>>v[i];
+    }
+    sort(v.begin(), v.end());
+    int i = 1 ,count = 1;
+    while(i<n){
+     if(v[i]!= v[i-1]){
+         count++;
+     } 
+     i++;
+    }
+    cout<<count<<" ";
+	
+	return 0;
+}
+
+input : 5
+        2 3 1 2 3
+        
+ output: 3
+ 
+    Explanation : Hum sort kiye vector array ko abb hum har ek element ka check kare ki vo uske peeche wala se equal hai ya nai
+                equal hai to same number hai aur unequal hai to matlb new number to count badaha diye . so here hum har baar ek peeche index se 
+                compare kar rahe hai, 0th index wale ke peeche to koi na  agr 0 se start karte to i-1 index matlb -1 index
+                iye error de deta na issiliye hum 1 se start kiye 
+                
+                2nd number se start karte to garbar ho sakta tha na kyuki hum 1st number ko ni dekhe aur usko skip kar diye
+                issiliye count ka value 1 se start kiye ki 1 number pehle se hoga
+                
+                Here i++ if k bahar hua kyuki whike mei(i<n) hai maan lo ki if  k andr hi hai i++ aur if k andr nai gaya to if mein nai 
+                jaayega to i++ nai hoga aur i+= nai hoga to i ka value fixed rahega aur infinite loop chlega but humko i fixed nai chie for thay i++ bahr hoga
