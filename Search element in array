@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int search(int arr[],int n,int x){
+    for(int i = 0;i<n;i++){
+        if(arr[i]== x){
+            return i;
+        }
+    }
+    return -1;         // -1 return kiye agr kuch ni dia hua hai ki kya return karo jab match nai kia tab genrally dia rehta hai tab by default 1 return karo
+}
+int main() {
+	int n,x;
+	cin>>n>>x;
+	int arr[n];
+	for(int i = 0;i<n;i++){
+	    cin>>arr[i];
+	}
+	cout<<search(arr,n,x)<<" ";
+	return 0;
+}
+
+INPUT : 5  // N
+      : 5  // X
+      1 2 3 2 18
+ OUTPUT : -1
+ 
+ 
+ INPUT : 5     //N
+        : 4    //X
+        1 2 3 4 18
+ OUTPUT : 3
