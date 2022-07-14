@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+double average(int arr[],int n){
+    int ans = 0;
+    for(int i = 0;i<n;i++){
+        ans = ans+arr[i];
+    }
+    return ans/double(n);       // here double(n) likhe kyuki humo point mei chie tha if sirf ans/n likhye to mera ans int mein aata like integer
+}
+
+int main() {
+	int n;
+	cin>>n;
+	int arr[n];
+	for(int i = 0;i<n;i++){
+	    cin>>arr[i];
+	}
+	cout<<average(arr,n)<<" ";
+	return 0;
+}
+
+
+
+input : 5
+        2 3 1 2 3
+ output : 2.2
