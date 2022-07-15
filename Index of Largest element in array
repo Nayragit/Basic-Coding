@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int largest(int arr[],int n){
+    int res = arr[0];
+    for(int i = 1;i<n;i++){
+        if(arr[i]>arr[res]){
+            res =i;
+        }
+    }
+    return res;
+}
+int main() {
+	int n;
+	cin>>n;
+	int arr[n];
+	for(int i = 0;i<n;i++){
+	    cin>>arr[i];
+	}
+	cout<<largest(arr,n)<<" ";
+	return 0;
+}
+
+INPUT : 4
+      : 10 20 30 40
+OUTPUT : 3
+
+
+Here we store arr[0] in res and we traversing the whole array at 1 index 
+humara res[0] = 10 hai aur array at 1 se shuru kiye aur compare kiye 10 and 20 ko to 20 big hai to 
+res = 0 se update hoke res = 1 hho gaya phir i 30 pe gaya to aur 20 and 30 ko compare kiye
+to 30 bug hai to re ab 1 se 2 ho gayya ab i gaya 40 pe to compare 30 and 40 to res 3 ho gya jo largest index hai
+suppose ab 40 k jagh 10 hota to 30 aur 10 mein compare karte to 10 small hai to res still 2 rehts update bai hota kyuki chota element hai
